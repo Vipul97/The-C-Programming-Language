@@ -2,13 +2,12 @@
 
 main()
 {
-	int c;
+    int c;
 
-	while ((c = getchar()) != EOF)
-	{
-		if (c == ' ' || c == '\t' || c == '\n')
-			putchar('\n');
-		else
-			putchar(c);
-	}
+    while ((c = getchar()) != EOF) {
+        if (c == ' ' || c == '\t' || c == '\n')
+            putchar('\n');
+        else
+            putchar(c);
+    }
 }

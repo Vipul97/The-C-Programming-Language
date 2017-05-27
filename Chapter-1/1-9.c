@@ -2,12 +2,11 @@
 
 main()
 {
-	int c, previous;
+    int c, previous;
 
-	while ((c = getchar()) != EOF)
-	{
-		if (!(previous == ' ' && c == ' '))
-			putchar(c);
-		previous = c;
-	}
+    while ((c = getchar()) != EOF) {
+        if (!(previous == ' ' && c == ' '))
+            putchar(c);
+        previous = c;
+    }
 }

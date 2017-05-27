@@ -2,5 +2,5 @@
 
 main()
 {
-	printf("%d\n", EOF);
+    printf("%d\n", EOF);
 }
