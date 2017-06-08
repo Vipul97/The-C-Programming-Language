@@ -158,7 +158,7 @@ int getop(char s[])
     int i, c;
 
     if (line[lp] == '\0')
-        if (getline1(line, MAXLINE) == 0)
+        if (getline(line, MAXLINE) == 0)
             return EOF;
         else
             lp = 0;
