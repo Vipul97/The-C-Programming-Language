@@ -6,10 +6,7 @@ void ungets(char s[])
 
     if (bufp + i + 1 >= BUFSIZE)
         printf("ungets: too many characters\n");
-    else {
-        while (i >= 0) {
-            ungetch(s[i]);
-            i--;
-        }
-    }
+    else
+        while (i >= 0)
+            ungetch(s[i--]);
 }
