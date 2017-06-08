@@ -14,7 +14,7 @@ double pop(void);
 double top(void);
 void clear(void);
 void func(char []);
-int getline1(char [], int);
+int getline(char [], int);
 
 /* reverse Polish calculator */
 main()
@@ -192,7 +192,7 @@ int getop(char s[])
     return NUMBER;
 }
 
-int getline1(char s[], int lim)
+int getline(char s[], int lim)
 {
     int i, c;
     for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; i++)
