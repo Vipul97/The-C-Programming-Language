@@ -22,7 +22,7 @@ main()
     int type, i;
     double op1, op2, v;
     char s[MAXOP];
-    double variable[26] = {0};
+    double variable[26] = { 0 };
 
     while ((type = getop(s)) != EOF) {
         switch (type) {
