@@ -12,17 +12,17 @@ void detab(int n)
 {
     int column, c;
 
-    column = 0;
+    column = 1;
     while ((c = getchar()) != EOF)
         if (c == '\t')
             do {
                 putchar(' ');
                 column++;
-            } while (column % n);
+            } while ((column - 1) % n);
         else {
             putchar(c);
             if (c == '\n')
-                column = 0;
+                column = 1;
             else
                 column++;
         }
