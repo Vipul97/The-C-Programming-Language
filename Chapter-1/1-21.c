@@ -12,30 +12,28 @@ void entab(int n)
 {
     int column, blanks, c;
 
-    column = blanks = 0;
+    column = 1;
+    blanks = 0;
     while ((c = getchar()) != EOF) {
-        if (c == ' ')
-            blanks++;
-        else if (c == '\t')
-            blanks += n - (column + blanks) % n;
-        else {
+        if (c == ' ' || c == '\t') {
+            if (c == ' ')
+                blanks++;
+            else
+                blanks += n - (blanks + column - 1) % n;
+            if (blanks == n - (column - 1) % n) {
+                putchar('\t');
+                column += n - (column - 1) % n;
+                blanks = 0;
+            }
+        } else {
             while (blanks) {
-                int t;
-
-                t = n - column % n;
-                if (t <= blanks && t != 1) {
-                    column += t;
-                    putchar('\t');
-                    blanks -= t;
-                } else
-                    do {
-                        column++;
-                        putchar(' ');
-                    } while (--blanks);
+                putchar(' ');
+                column++;
+                blanks--;
             }
             putchar(c);
             if (c == '\n')
-                column = 0;
+                column = 1;
             else
                 column++;
         }
