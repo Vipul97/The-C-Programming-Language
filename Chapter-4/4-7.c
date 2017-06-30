@@ -8,5 +8,5 @@ void ungets(char s[])
         printf("ungets: too many characters\n");
     else
         while (i > 0)
-            ungetch(s[i--]);
+            ungetch(s[--i]);
 }
