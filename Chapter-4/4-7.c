@@ -2,11 +2,11 @@
 
 void ungets(char s[])
 {
-    int i = strlen(s) - 1;
+    int i = strlen(s);
 
-    if (bufp + i + 1 >= BUFSIZE)
+    if (bufp + i + 1 > BUFSIZE)
         printf("ungets: too many characters\n");
     else
-        while (i >= 0)
+        while (i > 0)
             ungetch(s[i--]);
 }
