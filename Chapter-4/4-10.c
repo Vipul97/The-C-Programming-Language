@@ -136,6 +136,7 @@ void clear(void)
 void func(char s[])
 {
     double op2;
+
     if (strcmp(s, "sin") == 0)
         push(sin(pop()));
     else if (strcmp(s, "exp") == 0)
@@ -195,6 +196,7 @@ int getop(char s[])
 int getline(char s[], int lim)
 {
     int i, c;
+
     for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; i++)
         s[i] = c;
     if (c == '\n')

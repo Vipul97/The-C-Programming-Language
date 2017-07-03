@@ -3,6 +3,7 @@ char buf = 0;   /* buffer for ungetch */
 int getch(void) /* get a (possibly pushed back) character */
 {
     int c;
+
     if (buf != 0) {
         c = buf;
         buf = 0;

@@ -124,6 +124,7 @@ void clear(void)
 void func(char s[])
 {
     double op2;
+
     if (strcmp(s, "sin") == 0)
         push(sin(pop()));
     else if (strcmp(s, "exp") == 0)
