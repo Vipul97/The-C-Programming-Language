@@ -9,7 +9,7 @@ main()
     char line[MAXLINE];
 
     while ((len = getline(line, MAXLINE)) > 0)
-        if (len > 80)
+        if (len > 81)
             printf("%s", line);
 
     return 0;

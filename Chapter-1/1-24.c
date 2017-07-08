@@ -19,10 +19,8 @@ int main()
     while ((c = getchar()) != EOF)
         if (state == NOTHING) {
             if (c == '/') {
-                do
-                    if ((c = getchar()) == '*')
-                        state = COMMENT;
-                while (c == '/');
+                if ((c = getchar()) == '*')
+                    state = COMMENT;
             } else {
                 if (c == '\"')
                     state = DOUBLE_QUOTE;
@@ -51,7 +49,9 @@ int main()
                         print_error("Unbalanced braces");
                         return -1;
                     }
-                }
+                } else if (c == '*')
+                    if ((c = getchar()) == '/')
+                        print_error("Uninitialized comment");
             }
         } else if (state == COMMENT) {
             if (c == '\n')
@@ -62,11 +62,11 @@ int main()
                         state = NOTHING;
         } else {
             if (c == '\n') {
-                print_error("Newline character inside a double or single quote");
+                print_error("Unbalanced single or double quote");
                 return -1;
             } else if (c == '\\')
                 c = getchar();
-            else if ((state == DOUBLE_QUOTE && c == '\"') || (state == SINGLE_QUOTE && c == '\'')
+            else if ((state == DOUBLE_QUOTE && c == '\"') || (state == SINGLE_QUOTE && c == '\''))
                 state = NOTHING;
         }
     if (state == COMMENT) {

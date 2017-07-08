@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define SIZE 'z' - ' '
+#define SIZE 'z' - ' ' + 1
 
 main()
 {
@@ -15,7 +15,7 @@ main()
             ++nchar[c - ' '];
 
     for (i = 0; i < SIZE; ++i) {
-        printf("%2d ", i);
+        printf("%c: ", i + ' ');
         for (j = 0; j < nchar[i]; ++j)
             printf("-");
         printf("\n");

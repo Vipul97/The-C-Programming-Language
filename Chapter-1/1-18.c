@@ -9,16 +9,12 @@ main()
     char line[MAXLINE];
 
     while ((len = getline(line, MAXLINE)) > 0) {
-        len = len-2;
-        if (len >= 0 && line[len] == '\n')
+        while (len > 1 && (line[len-1] == ' ' || line[len-1] == '\t' || line[len-1] == '\n'))
             len--;
 
-        while (len >= 0 && (line[len] == ' ' || line[len] == '\t'))
-            len--;
-
-        if (len >= 0) {
-            line[len+1] = '\n';
-            line[len+2] = '\0';
+        if (len > 1) {
+            line[len] = '\n';
+            line[len+1] = '\0';
             printf("%s", line);
         }
     }
