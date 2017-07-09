@@ -11,10 +11,7 @@ main()
     unsigned int ui = 0;
     signed long sl;
     unsigned long ul = 0;
-    float f;
-    double d;
-    long double ld;
-    printf("%f, %f, %Lf\n", f, d, ld);
+
     printf("By Printing Appropriate Values from Standard Headers:\n");
     printf("Range of signed char: %d - %d\n", SCHAR_MIN, SCHAR_MAX);
     printf("Range of unsigned char: %u - %u\n", 0, UCHAR_MAX);
@@ -47,18 +44,5 @@ main()
         ;
     printf("%ld - %ld\n", ++sl, sl);
     printf("Range of unsigned long: %d - %lu\n", 0, --ul);
-    printf("Range of float: ");
-    printf("%f\n", f);
-    for (f = 0; f <= 0; f -= 0.000001)
-        ;
-    printf("%f - %f\n", f += 0.1, f);
-    printf("Range of double: ");
-    for (d = 0; d <= 0; d -= 0.000001)
-        ;
-    printf("%f - %f\n", d += 0.000001, d);
-    printf("Range of long double: ");
-    for (ld = 0; ld <= 0; ld -= 0.000001)
-        ;
-    printf("%Lf - %Lf\n", ld += 0.000001, ld);
     return 0;
 }
