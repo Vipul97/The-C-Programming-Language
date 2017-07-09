@@ -1,14 +1,7 @@
 #include <stdio.h>
-
-void entab(int n);
+#define TABSIZE 8
 
 main()
-{
-    entab(8);
-    return 0;
-}
-
-void entab(int n)
 {
     int column, blanks, c;
 
@@ -19,10 +12,10 @@ void entab(int n)
             if (c == ' ')
                 blanks++;
             else
-                blanks += n - (blanks + column - 1) % n;
-            if (blanks == n - (column - 1) % n) {
+                blanks = blanks + TABSIZE - (blanks + column - 1) % TABSIZE;
+            if (blanks == TABSIZE - (column - 1) % TABSIZE) {
                 putchar('\t');
-                column += n - (column - 1) % n;
+                column = column + TABSIZE - (column - 1) % TABSIZE;
                 blanks = 0;
             }
         } else {
@@ -38,4 +31,5 @@ void entab(int n)
                 column++;
         }
     }
+    return 0;
 }

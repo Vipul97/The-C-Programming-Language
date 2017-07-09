@@ -1,29 +1,25 @@
 #include <stdio.h>
-
-void detab(int n);
+#define TABSIZE 8
 
 main()
-{
-    detab(8);
-    return 0;
-}
-
-void detab(int n)
 {
     int column, c;
 
     column = 1;
     while ((c = getchar()) != EOF)
-        if (c == '\t')
-            do {
+        if (c == '\t') {
+            putchar(' ');
+            column++;
+            while ((column - 1) % TABSIZE) {
                 putchar(' ');
                 column++;
-            } while ((column - 1) % n);
-        else {
+            }
+        } else {
             putchar(c);
             if (c == '\n')
                 column = 1;
             else
                 column++;
         }
+    return 0;
 }

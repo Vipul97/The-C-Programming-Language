@@ -13,13 +13,18 @@ int main()
     while ((c = getchar()) != EOF)
         if (state == NOTHING) {
             if (c == '/') {
-                do {
+                if ((d = getchar()) == '*')
+                    state = COMMENT;
+                else
+                    putchar(c);
+                c = d;
+                while (c == '/') {
                     if ((d = getchar()) == '*')
                         state = COMMENT;
                     else
                         putchar(c);
                     c = d;
-                } while (c == '/');
+                }
                 if (state != COMMENT && c != EOF)
                     putchar(c);
             } else {

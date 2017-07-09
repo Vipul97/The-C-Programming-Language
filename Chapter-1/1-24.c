@@ -22,10 +22,10 @@ int main()
                 if ((c = getchar()) == '*')
                     state = COMMENT;
             } else {
-                if (c == '\"')
-                    state = DOUBLE_QUOTE;
-                else if (c == '\'')
+                if (c == '\'')
                     state = SINGLE_QUOTE;
+                else if (c == '\"')
+                    state = DOUBLE_QUOTE;
                 else if (c == '\n')
                     line++;
                 else if (c == '(')
@@ -39,7 +39,7 @@ int main()
                     brackets++;
                 else if (c == ']') {
                     if (--brackets < 0) {
-                        print_error("Unbalanced brakets");
+                        print_error("Unbalanced brackets");
                         return -1;
                     }
                 } else if (c == '{')
@@ -73,13 +73,13 @@ int main()
         print_error("Unterminated comment");
         return -1;
     } else if (state == DOUBLE_QUOTE || state == SINGLE_QUOTE) {
-        print_error("Unterminated double or single quote");
+        print_error("Unterminated single or double quote");
         return -1;
-    } else
-        return 0;
+    }
+    return 0;
 }
 
 void print_error(char s[])
 {
-    printf("Error (%d): %s!\n", line, s);
+    printf("error on line %d: %s\n", line, s);
 }
