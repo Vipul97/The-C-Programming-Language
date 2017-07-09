@@ -1,4 +1,4 @@
-/* int data type can only handle values between -(2^wordsize-1) to (2^wordsize-1) - 1, and if we make n having the largest negative number positive, it will result in an overflow.  */
+/* int data type can only handle values between -(2^wordsize-1) to (2^wordsize-1) - 1, and if we make n having the largest negative number positive, it will result in an overflow. */
 
 /* itoa:  convert n to characters in s */
 void itoa(int n, char s[])
