@@ -75,8 +75,7 @@ main(int argc, char* argv[])
             clear();
             break;
         case '=':
-            push(variable[i] = pop());
-            pop();
+            variable[i] = pop();
             break;
         case '\n':
             v = pop();

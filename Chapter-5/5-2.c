@@ -24,11 +24,12 @@ int getfloat(float* pn)
     }
     for (*pn = 0.0; isdigit(c); c = getch())
         *pn = 10.0 * *pn + (c - '0');
-    if (c == '.')
+    if (c == '.') {
         c = getch();
-    for (power = 1.0; isdigit(c); c = getch()) {
-        *pn = 10.0 * *pn + (c - '0');
-        power *= 10.0;
+        for (power = 1.0; isdigit(c); c = getch()) {
+            *pn = 10.0 * *pn + (c - '0');
+            power *= 10.0;
+        }
     }
     if (c == 'e' || c == 'E') {
         sawe = c;

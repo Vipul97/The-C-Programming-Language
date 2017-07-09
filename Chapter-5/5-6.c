@@ -1,9 +1,10 @@
 int getline(char* s, int lim)
 {
     int c;
-    char* t = s;
-    while (lim-- && (c = getchar()) != EOF && c != '\n')
-        *s++ = c;
+    char* t;
+
+    for (t = s; lim-- && (c=getchar()) != EOF && c != '\n'; s++)
+        *s = c;
     if (c == '\n') {
         *s = c;
         ++s;
@@ -14,7 +15,9 @@ int getline(char* s, int lim)
 
 int atoi(char* s)
 {
-    int n = 0;
+    int n;
+
+    n = 0;
     while (*s >= '0' && *s <= '9')
         n = 10 * n + (*s++ - '0');
     return n;
@@ -23,9 +26,10 @@ int atoi(char* s)
 void itoa(int n, char* s)
 {
     int sign;
-    char* t = s;
+    char* t;
 
     sign = n;
+    t = s;
     do {
         *s++ = abs(n % 10) + '0';
     } while ((n /= 10) != 0);

@@ -4,7 +4,7 @@ int day_of_year(int year, int month, int day)
     int leap;
     char *p;
 
-    leap = year%4 == 0 && year% 100 != 0 || year%400 == 0;
+    leap = year%4 == 0 && year%100 != 0 || year%400 == 0;
     p = daytab[leap];
     if (month < 1 || month > 12)
         return -1;

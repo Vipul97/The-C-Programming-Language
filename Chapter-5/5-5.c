@@ -6,7 +6,8 @@ void strncpy(char* s, char* t, int n)
 
 void strncat(char* s, char* t, int n)
 {
-    s += strlen(s);
+    while (*s)
+        s++;
     while ((*s++ = *t++) && n--)
         ;
     *s = '\0';
