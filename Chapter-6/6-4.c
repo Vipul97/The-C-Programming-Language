@@ -13,7 +13,7 @@ struct tnode {        /* the tree node: */
 };
 struct word {
     char *word;
-    int count;
+    int count;   /* variable */
 };
 
 struct tnode *addtree(struct tnode *, char *);
