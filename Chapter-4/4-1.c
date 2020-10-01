@@ -1,3 +1,4 @@
+/* string matching problem */
 int strrindex(char s[], char t[])
 {
     int i, j, k, match;
