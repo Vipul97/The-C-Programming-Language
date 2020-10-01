@@ -13,5 +13,5 @@ void itoa(int n, char s[], int w)
     while (i < w)
         s[i++] = ' ';
     s[i] = '\0';
-    reverse(s);
+    reverse(s);  /* reverse is a predefined function */
 }

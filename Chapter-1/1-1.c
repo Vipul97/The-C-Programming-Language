@@ -2,5 +2,6 @@
 
 main()
 {
-    printf("hello, world\n");
+    //Displays the string inside quotations.
+    printf("hello, world\n"); 
 }
